@@ -81,7 +81,7 @@ Return value: int- time of next screening
         char* movieLanguage_;
         static int moviePrice_;
         int movieTheaterNum_;
-        Mat screeningTime_ (DAYS_IN_WEEK, MAX_SCREENINGS_PER_DAY);
+        Mat screeningTime_;
 };
 
 
