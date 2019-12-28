@@ -10,13 +10,13 @@ Description: constructor with no parameters
 Parameters: None
 Return value: None
 **********************************************************************************/
-Mat::Mat()
+Mat::Mat() : Rows_(2), Cols_(2)
 {
-    matrix_ = new int*[2];
-    for (int i=0; i<2; i++)
+    matrix_ = new int*[Rows_];
+    for (int i=0; i<Rows_; i++)
     {
-        matrix_[i] = new int[2];
-        for (int j=0; j<2; j++)
+        matrix_[i] = new int[Cols_];
+        for (int j=0; j<Cols_; j++)
         {
             matrix_[i][j] = 0;
         }
@@ -53,8 +53,9 @@ Mat::~Mat()
 {
     for(int i=0; i<Rows_; i++)
     {
-        delete []matrix_;
+        delete []matrix_[i];
     }
+    delete []matrix_;
 }
 
 //----------------------------------------getters------------------------------------------//
