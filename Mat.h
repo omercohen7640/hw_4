@@ -64,7 +64,8 @@ Parameters: row - index of row
 Return value: None
 **********************************************************************************/
         void setElement(int row, int col, int val);
-    private:
+
+    protected:
         int Rows_;
         int Cols_;
         int** matrix_;
