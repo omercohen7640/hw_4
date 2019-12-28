@@ -59,7 +59,7 @@ public:
     Return value: weekly salary of an employee
     **********************************************************************************/
     int calcWeeklySalary();
-private:
+protected:
     char** hours_;
     char *name_;
     int salary_;

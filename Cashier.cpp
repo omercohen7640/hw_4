@@ -3,6 +3,7 @@
 //
 
 #include "Cashier.h"
+#include "DubbedMovie.h"
 
 
 Cashier::Cashier(char **hours, char *name, int salary) : Employee(hours, name, salary),ticket_profit_(0) {
@@ -13,6 +14,28 @@ int Cashier::getTicketProfit() {
     return ticket_profit_;
 }
 
-int Cashier::sellTickets(Movie *p_movie, Theater *p_theater, BOOL dubbed, int tickets_num, int row, int col) {
 
+int sellTicketsHelp(ןint movie_theater_num, Theater *p_theater, int tickets_num, int row, int col)
+{
+    if (row <=0 || col <= 0 || row > p_theater->getRowsNum() || (col+tickets_num) > p_theater->getColumnsNum()) return 0; // ilegal row or col
+    if (movie_theater_num_num != p_theater->getTheaterNum()) return 0; // check if the movie shown in the given theater
+    for (int i = 0; i < tickets_num; ++i) {
+        if (p_theater->getElement(row,col + i) == TAKEN ) return 0;
+    }
+    for (int i = 0; i < tickets_num; i++) {
+        p_theater->setElement(row,col + i,TAKEN);
+    }
+    return tickets_num * (p_movie->getTicketPrice());
 }
+
+int Cashier::sellTickets(Movie *p_movie, Theater *p_theater, BOOL dubbed, int tickets_num, int row, int col) {
+    DubbedMovie* d_movie;
+    if (dubbed == FALSE){
+        return sellTicketsHelp(p_movie->getTheaterNum(),p_theater,tickets_num,row,col);
+    }
+    else{
+        d_movie = (DubbedMovie*)p_movie;
+        return sellTicketsHelp(p_movie->getHebrewTheaterNum(),p_theater,tickets_num,row,col);
+    }
+}
+
