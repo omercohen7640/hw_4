@@ -17,14 +17,6 @@ public:
     Employee();
 
     /*********************************************************************************
-    Function name: ~employee
-    Description: d'tor
-    Parameters: -
-    Return value: -
-    **********************************************************************************/
-    virtual ~Employee();
-
-    /*********************************************************************************
     Function name: employee
     Description: with parameters c'tor
     Parameters:
@@ -33,7 +25,15 @@ public:
      hours[] - array of 7 wth work hours string
     Return value: -
     **********************************************************************************/
-    Employee(char* hours[], char *name, int salary=0);
+    Employee(char **hours, char *name, int salary=0);
+
+    /*********************************************************************************
+    Function name: ~employee
+    Description: d'tor
+    Parameters: -
+    Return value: -
+    **********************************************************************************/
+    virtual ~Employee();
 
     /*********************************************************************************
     Function name: getname
