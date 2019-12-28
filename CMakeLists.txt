@@ -3,4 +3,4 @@ project(hw_4)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(hw_4 main.cpp)
+add_executable(hw_4 main.cpp proj.h)
