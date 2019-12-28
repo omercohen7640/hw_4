@@ -43,6 +43,7 @@
 using namespace std;
 
 int main() {
+    /*
     int i;
 
 
@@ -423,6 +424,7 @@ int main() {
     delete movieName1; delete movieName2; delete language1; delete language2; delete empName1; delete empName2;
     delete movie1; delete movie2; delete employee1; delete cashier1;
     delete mat1;
+     */
     return 0;
 }
 
