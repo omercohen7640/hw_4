@@ -5,6 +5,7 @@
 #ifndef HW_4_EMPLOYEE_H
 #define HW_4_EMPLOYEE_H
 #include <string.h>
+#include <stdlib.h>
 
 class Employee {
 public:
@@ -14,7 +15,7 @@ public:
     Parameters: -
     Return value: -
     **********************************************************************************/
-    Employee();
+  //  Employee();
 
     /*********************************************************************************
     Function name: employee
