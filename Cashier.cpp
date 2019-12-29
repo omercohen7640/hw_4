@@ -5,11 +5,22 @@
 #include "Cashier.h"
 #include "DubbedMovie.h"
 
-
+/*********************************************************************************
+Function name: Cashier
+Description: c'tor
+Parameters: -
+Return value: -
+**********************************************************************************/
 Cashier::Cashier(char **hours, char *name, int salary) : Employee(hours, name, salary),ticket_profit_(0) {
 
 }
 
+/*********************************************************************************
+    Function name: getTicketProfit
+    Description: return the the profit made by the cashier
+    Parameters: -
+    Return value: ticket profit
+    **********************************************************************************/
 int Cashier::getTicketProfit() {
     return ticket_profit_;
 }
@@ -28,6 +39,21 @@ int sellTicketsHelp(ןint movie_theater_num, Theater *p_theater, int tickets_num
     return tickets_num * (p_movie->getTicketPrice());
 }
 
+
+
+
+/*********************************************************************************
+Function name: sellTickets
+Description: sell ticket for a movie in a given theater
+Parameters:
+p_move- pointer to wanted movie
+p_theater - pointer the a wanted theater
+dubbed- boolean value
+tickets_num- number of wanted tickets
+row- wanted row
+col - collumn of the right seat.
+Return value: -
+**********************************************************************************/
 int Cashier::sellTickets(Movie *p_movie, Theater *p_theater, BOOL dubbed, int tickets_num, int row, int col) {
     DubbedMovie* d_movie;
     if (dubbed == FALSE){
