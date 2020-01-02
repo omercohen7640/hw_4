@@ -42,7 +42,7 @@ int sellTicketsHelp(int movie_theater_num,int movie_price, Theater *p_theater, i
 
 
 
-/*********************************************************************************
+/**********************************************************************************
 Function name: sellTickets
 Description: sell ticket for a movie in a given theater
 Parameters:
