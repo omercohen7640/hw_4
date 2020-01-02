@@ -26,7 +26,7 @@ int Cashier::getTicketProfit() {
 }
 
 
-int sellTicketsHelp(ןint movie_theater_num, Theater *p_theater, int tickets_num, int row, int col)
+int sellTicketsHelp(int movie_theater_num,int movie_price, Theater *p_theater, int tickets_num, int row, int col)
 {
     if (row <=0 || col <= 0 || row > p_theater->getRowsNum() || (col+tickets_num) > p_theater->getColumnsNum()) return 0; // ilegal row or col
     if (movie_theater_num != p_theater->getTheaterNum()) return 0; // check if the movie is shown in the given theater
@@ -36,7 +36,7 @@ int sellTicketsHelp(ןint movie_theater_num, Theater *p_theater, int tickets_num
     for (int i = 0; i < tickets_num; i++) {
         p_theater->setElement(row,col + i,TAKEN);
     }
-    return tickets_num * (p_movie->getTicketPrice());
+    return tickets_num * movie_price;
 }
 
 
@@ -57,11 +57,11 @@ Return value: -
 int Cashier::sellTickets(Movie *p_movie, Theater *p_theater, BOOL dubbed, int tickets_num, int row, int col) {
     DubbedMovie* d_movie;
     if (dubbed == FALSE){
-        return sellTicketsHelp(p_movie->getTheaterNum(),p_theater,tickets_num,row,col);
+        return sellTicketsHelp(p_movie->getTheaterNum(),p_movie->getTicketPrice(),p_theater,tickets_num,row,col);
     }
     else{
         d_movie = (DubbedMovie*)p_movie;
-        return sellTicketsHelp(p_movie->getHebrewTheaterNum(),p_theater,tickets_num,row,col);
+        return sellTicketsHelp(p_movie->getHebrewTheaterNum(),p_movie->getTicketPrice(),p_theater,tickets_num,row,col);
     }
 }
 

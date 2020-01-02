@@ -12,7 +12,8 @@ class DubbedMovie : public Movie{
 public:
 
 
-private:
+protected:
+    m
 
 
 
