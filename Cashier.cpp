@@ -29,7 +29,7 @@ int Cashier::getTicketProfit() {
 int sellTicketsHelp(ןint movie_theater_num, Theater *p_theater, int tickets_num, int row, int col)
 {
     if (row <=0 || col <= 0 || row > p_theater->getRowsNum() || (col+tickets_num) > p_theater->getColumnsNum()) return 0; // ilegal row or col
-    if (movie_theater_num_num != p_theater->getTheaterNum()) return 0; // check if the movie shown in the given theater
+    if (movie_theater_num != p_theater->getTheaterNum()) return 0; // check if the movie is shown in the given theater
     for (int i = 0; i < tickets_num; ++i) {
         if (p_theater->getElement(row,col + i) == TAKEN ) return 0;
     }

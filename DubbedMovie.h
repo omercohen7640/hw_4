@@ -5,8 +5,16 @@
 #ifndef HW_4_DUBBEDMOVIE_H
 #define HW_4_DUBBEDMOVIE_H
 
+#include "Movie.h"
 
-class DubbedMovie {
+//class Cashier : public Employee
+class DubbedMovie : public Movie{
+public:
+
+
+private:
+
+
 
 };
 
